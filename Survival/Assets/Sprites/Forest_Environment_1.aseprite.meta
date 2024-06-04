@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e68060275169e6243873373c2be53be1
+guid: 6e1ad347ec6f3c9428fbf52b1f809dac
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Forest
+  - name: Forest_Environment_1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 2.25, y: -3}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 128
-      height: 128
-    spriteID: 2a372f894374fa444bd45508fa3418dc
+      width: 28
+      height: 32
+    spriteID: dbba64dc268f0934187217d4e9e7383c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1229776939
-    name: Forest
+    guid: 1192119017
+    name: Forest_Environment_1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Forest
+    - name: Forest_Environment_1
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      spriteId: 2a372f894374fa444bd45508fa3418dc
+        x: 1
+        y: 96
+        width: 28
+        height: 32
+      spriteId: dbba64dc268f0934187217d4e9e7383c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
