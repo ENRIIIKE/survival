@@ -108,7 +108,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,7 +129,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,6 +137,27 @@ TextureImporter:
       bones: []
       spriteID: 11a20c9e23f3347498ac30f3f3d1cd5d
       internalID: -918138467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_1_AR15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17acd0dc4d66a374ab88fe370ab5363e
+      internalID: 824935683
       vertices: []
       indices: 
       edges: []
@@ -154,6 +175,7 @@ TextureImporter:
     nameFileIdTable:
       Weapons_1_0: 1344467728533578282
       Weapons_1_1: -918138467
+      Weapons_1_AR15: 824935683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

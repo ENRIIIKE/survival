@@ -39,7 +39,7 @@ public class PlayerAnimation : MonoBehaviour
 
                 StopAllCoroutines();
                 _coroutinePerforming = false;
-
+    
                 break;
 
             case movementDirection.Up:

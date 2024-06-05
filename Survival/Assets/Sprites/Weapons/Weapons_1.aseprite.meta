@@ -123,14 +123,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Weapons_1
     originalName: 
-    pivot: {x: 2.3333335, y: -1.0238096}
+    pivot: {x: 0.75, y: -1.0238096}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 18
+      width: 56
       height: 42
     spriteID: 0a2d6e8fef7138b4fb12d0a564cf81a3
     spriteBone: []
@@ -155,7 +155,7 @@ ScriptedImporter:
       cellRect:
         x: 6
         y: 43
-        width: 18
+        width: 56
         height: 42
       spriteId: 0a2d6e8fef7138b4fb12d0a564cf81a3
     linkedCells: []

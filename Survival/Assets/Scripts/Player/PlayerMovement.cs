@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _moveAction = _playerInput.Movement.MovementAction;
+        _moveAction = _playerInput.GeneralMap.MovementAction;
         _moveAction.Enable();
 
     }
