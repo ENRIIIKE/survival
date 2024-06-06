@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Fire Arm", menuName = "Scriptable Objects")]
+[CreateAssetMenu(fileName = "New Fire Arm", menuName = "Scriptable Objects/New Fire Arm")]
 public class FireArmScriptableObject : WeaponScriptableObject
 {
     [Header("Fire Arm Information")]

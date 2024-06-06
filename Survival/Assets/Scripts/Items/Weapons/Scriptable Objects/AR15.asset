@@ -15,6 +15,7 @@ MonoBehaviour:
   itemID: 0
   itemName: AR-15
   itemDescription: Pew pew automatic weapon
+  itemImage: {fileID: 824935683, guid: 393bb48b53803c74ba5cc852566d5cd0, type: 3}
   weaponDamage: 15
   weaponAttackSpeed: 0.95
   singleFire: 0
