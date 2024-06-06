@@ -11,7 +11,7 @@ public class FireArmScript : MonoBehaviour
     private InputAction _action;
 
     private float _fireCooldown;
-
+    private bool _coroutinePerforming;
     private void Awake()
     {
         _playerInput = new PlayerInputActions();
@@ -38,11 +38,35 @@ public class FireArmScript : MonoBehaviour
         if (Time.time > _fireCooldown)
         {
             _fireCooldown = weaponSO.weaponAttackSpeed + Time.time;
-            weaponSO.FireWeapon();
+            FireWeapon();
         }
     }
     private void OnReload(InputAction.CallbackContext context)
     {
-        weaponSO.ReloadWeapon();    // IEnumerator
+        ReloadWeapon();
+    }
+
+    private void FireWeapon()
+    {
+        Debug.Log("Weapon fired");
+    }
+
+    private void ReloadWeapon()
+    {
+        StartCoroutine(ReloadTimer());
+    }
+
+    private IEnumerator ReloadTimer()
+    {
+        if (_coroutinePerforming)
+        {
+            yield break;
+        }
+        _coroutinePerforming = true;
+
+        yield return new WaitForSecondsRealtime(weaponSO.reloadTime);
+        Debug.Log("Weapon has been reloaded");
+
+        _coroutinePerforming = false;
     }
 }

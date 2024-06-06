@@ -16,13 +16,4 @@ public class FireArmScriptableObject : WeaponScriptableObject
     public float reloadTime;        // Reload time in seconds
     public GameObject bulletPrefab;
 
-    public void FireWeapon()
-    {
-        Debug.Log("Firing weapon");
-    }
-
-    public void ReloadWeapon()
-    {
-        Debug.Log("Reload weapon");
-    }
 }
