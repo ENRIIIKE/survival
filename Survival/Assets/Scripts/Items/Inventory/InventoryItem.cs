@@ -38,6 +38,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         image.raycastTarget = false;
+
         parentAfterDrag = transform.parent;
         transform.SetParent(canvasTransform);
     }
@@ -48,6 +49,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
+
         transform.SetParent(parentAfterDrag);
     }
 }

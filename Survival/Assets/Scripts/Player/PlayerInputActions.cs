@@ -53,6 +53,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equip First"",
+                    ""type"": ""Button"",
+                    ""id"": ""20ba61f0-7f44-4b6b-a15a-3cbcd118ab9d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equip Second"",
+                    ""type"": ""Button"",
+                    ""id"": ""087cbb4a-27a6-47d3-9e8a-bd751259a185"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equip Third"",
+                    ""type"": ""Button"",
+                    ""id"": ""247ab5e9-2bd9-43a6-8a7d-a97e7582dbd5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +159,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Reload Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec8465a1-2fad-4022-a043-1a47b22d029b"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equip First"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e960458-cec6-4efb-beaa-14ca6bc3c768"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equip Second"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e755cfec-a933-4fb3-9f53-51b792cc4921"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equip Third"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -177,6 +237,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerMap_MovementAction = m_PlayerMap.FindAction("Movement Action", throwIfNotFound: true);
         m_PlayerMap_ItemUse = m_PlayerMap.FindAction("Item Use", throwIfNotFound: true);
         m_PlayerMap_ReloadWeapon = m_PlayerMap.FindAction("Reload Weapon", throwIfNotFound: true);
+        m_PlayerMap_EquipFirst = m_PlayerMap.FindAction("Equip First", throwIfNotFound: true);
+        m_PlayerMap_EquipSecond = m_PlayerMap.FindAction("Equip Second", throwIfNotFound: true);
+        m_PlayerMap_EquipThird = m_PlayerMap.FindAction("Equip Third", throwIfNotFound: true);
         // UI Map
         m_UIMap = asset.FindActionMap("UI Map", throwIfNotFound: true);
         m_UIMap_OpenInventory = m_UIMap.FindAction("Open Inventory", throwIfNotFound: true);
@@ -244,6 +307,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_MovementAction;
     private readonly InputAction m_PlayerMap_ItemUse;
     private readonly InputAction m_PlayerMap_ReloadWeapon;
+    private readonly InputAction m_PlayerMap_EquipFirst;
+    private readonly InputAction m_PlayerMap_EquipSecond;
+    private readonly InputAction m_PlayerMap_EquipThird;
     public struct PlayerMapActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -251,6 +317,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MovementAction => m_Wrapper.m_PlayerMap_MovementAction;
         public InputAction @ItemUse => m_Wrapper.m_PlayerMap_ItemUse;
         public InputAction @ReloadWeapon => m_Wrapper.m_PlayerMap_ReloadWeapon;
+        public InputAction @EquipFirst => m_Wrapper.m_PlayerMap_EquipFirst;
+        public InputAction @EquipSecond => m_Wrapper.m_PlayerMap_EquipSecond;
+        public InputAction @EquipThird => m_Wrapper.m_PlayerMap_EquipThird;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -269,6 +338,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ReloadWeapon.started += instance.OnReloadWeapon;
             @ReloadWeapon.performed += instance.OnReloadWeapon;
             @ReloadWeapon.canceled += instance.OnReloadWeapon;
+            @EquipFirst.started += instance.OnEquipFirst;
+            @EquipFirst.performed += instance.OnEquipFirst;
+            @EquipFirst.canceled += instance.OnEquipFirst;
+            @EquipSecond.started += instance.OnEquipSecond;
+            @EquipSecond.performed += instance.OnEquipSecond;
+            @EquipSecond.canceled += instance.OnEquipSecond;
+            @EquipThird.started += instance.OnEquipThird;
+            @EquipThird.performed += instance.OnEquipThird;
+            @EquipThird.canceled += instance.OnEquipThird;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -282,6 +360,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ReloadWeapon.started -= instance.OnReloadWeapon;
             @ReloadWeapon.performed -= instance.OnReloadWeapon;
             @ReloadWeapon.canceled -= instance.OnReloadWeapon;
+            @EquipFirst.started -= instance.OnEquipFirst;
+            @EquipFirst.performed -= instance.OnEquipFirst;
+            @EquipFirst.canceled -= instance.OnEquipFirst;
+            @EquipSecond.started -= instance.OnEquipSecond;
+            @EquipSecond.performed -= instance.OnEquipSecond;
+            @EquipSecond.canceled -= instance.OnEquipSecond;
+            @EquipThird.started -= instance.OnEquipThird;
+            @EquipThird.performed -= instance.OnEquipThird;
+            @EquipThird.canceled -= instance.OnEquipThird;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -359,6 +446,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMovementAction(InputAction.CallbackContext context);
         void OnItemUse(InputAction.CallbackContext context);
         void OnReloadWeapon(InputAction.CallbackContext context);
+        void OnEquipFirst(InputAction.CallbackContext context);
+        void OnEquipSecond(InputAction.CallbackContext context);
+        void OnEquipThird(InputAction.CallbackContext context);
     }
     public interface IUIMapActions
     {
