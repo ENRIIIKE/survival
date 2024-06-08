@@ -19,18 +19,18 @@ public class FireArmScript : MonoBehaviour
 
     private void OnEnable()
     {
-        _action = _playerInput.ItemMap.ItemUse;
+        _action = _playerInput.PlayerMap.ItemUse;
         _action.Enable();
 
-        _playerInput.ItemMap.ItemUse.performed += OnUse;
-        _playerInput.ItemMap.ReloadWeapon.performed += OnReload;
+        _playerInput.PlayerMap.ItemUse.performed += OnUse;
+        _playerInput.PlayerMap.ReloadWeapon.performed += OnReload;
     }
     private void OnDisable()
     {
         _action.Disable();
 
-        _playerInput.ItemMap.ItemUse.performed -= OnUse;
-        _playerInput.ItemMap.ReloadWeapon.performed -= OnReload;
+        _playerInput.PlayerMap.ItemUse.performed -= OnUse;
+        _playerInput.PlayerMap.ReloadWeapon.performed -= OnReload;
     }
 
     private void OnUse(InputAction.CallbackContext context)

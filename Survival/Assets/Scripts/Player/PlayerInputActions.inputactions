@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Movement Map",
+            "name": "Player Map",
             "id": "9c336543-0736-47c5-8722-82c3ec6d37fa",
             "actions": [
                 {
@@ -13,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Item Use",
+                    "type": "Button",
+                    "id": "6284ba1a-bc37-4f53-9cac-70b8d91d72e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reload Weapon",
+                    "type": "Button",
+                    "id": "3129f816-4d3b-444b-97d9-02c4148af767",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,36 +88,10 @@
                     "action": "Movement Action",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Item Map",
-            "id": "7853119b-03bb-496a-ae29-57210f3bf086",
-            "actions": [
-                {
-                    "name": "Item Use",
-                    "type": "Button",
-                    "id": "9bcafde6-3de8-4eda-93b8-c4c6a0f94efe",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
-                    "name": "Reload Weapon",
-                    "type": "Button",
-                    "id": "13eaac07-dc7f-43b4-87b1-f0637d096314",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "97f94e7b-1a71-4bb2-80eb-d08d32b17d1a",
+                    "id": "ae4f4da0-9dfd-49c2-a93f-58cb47b327d5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
@@ -110,12 +102,40 @@
                 },
                 {
                     "name": "",
-                    "id": "004ecf74-805a-4974-99e2-9d106cb97708",
+                    "id": "96b3d781-8756-4f9a-a116-e0fc2791a51e",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Reload Weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI Map",
+            "id": "c5137b60-492e-4022-bfdd-0fcbd92e4d03",
+            "actions": [
+                {
+                    "name": "Open Inventory",
+                    "type": "Button",
+                    "id": "48529c0b-cbbe-4d92-b41a-38c417391b98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "00ffc431-647b-4fb4-8e05-784ced1ff005",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

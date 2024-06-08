@@ -24,7 +24,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Movement Map"",
+            ""name"": ""Player Map"",
             ""id"": ""9c336543-0736-47c5-8722-82c3ec6d37fa"",
             ""actions"": [
                 {
@@ -35,6 +35,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Item Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""6284ba1a-bc37-4f53-9cac-70b8d91d72e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload Weapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""3129f816-4d3b-444b-97d9-02c4148af767"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,36 +110,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Movement Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""Item Map"",
-            ""id"": ""7853119b-03bb-496a-ae29-57210f3bf086"",
-            ""actions"": [
-                {
-                    ""name"": ""Item Use"",
-                    ""type"": ""Button"",
-                    ""id"": ""9bcafde6-3de8-4eda-93b8-c4c6a0f94efe"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Reload Weapon"",
-                    ""type"": ""Button"",
-                    ""id"": ""13eaac07-dc7f-43b4-87b1-f0637d096314"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
                     ""name"": """",
-                    ""id"": ""97f94e7b-1a71-4bb2-80eb-d08d32b17d1a"",
+                    ""id"": ""ae4f4da0-9dfd-49c2-a93f-58cb47b327d5"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -132,12 +124,40 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""004ecf74-805a-4974-99e2-9d106cb97708"",
+                    ""id"": ""96b3d781-8756-4f9a-a116-e0fc2791a51e"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Reload Weapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI Map"",
+            ""id"": ""c5137b60-492e-4022-bfdd-0fcbd92e4d03"",
+            ""actions"": [
+                {
+                    ""name"": ""Open Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""48529c0b-cbbe-4d92-b41a-38c417391b98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""00ffc431-647b-4fb4-8e05-784ced1ff005"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -152,13 +172,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Movement Map
-        m_MovementMap = asset.FindActionMap("Movement Map", throwIfNotFound: true);
-        m_MovementMap_MovementAction = m_MovementMap.FindAction("Movement Action", throwIfNotFound: true);
-        // Item Map
-        m_ItemMap = asset.FindActionMap("Item Map", throwIfNotFound: true);
-        m_ItemMap_ItemUse = m_ItemMap.FindAction("Item Use", throwIfNotFound: true);
-        m_ItemMap_ReloadWeapon = m_ItemMap.FindAction("Reload Weapon", throwIfNotFound: true);
+        // Player Map
+        m_PlayerMap = asset.FindActionMap("Player Map", throwIfNotFound: true);
+        m_PlayerMap_MovementAction = m_PlayerMap.FindAction("Movement Action", throwIfNotFound: true);
+        m_PlayerMap_ItemUse = m_PlayerMap.FindAction("Item Use", throwIfNotFound: true);
+        m_PlayerMap_ReloadWeapon = m_PlayerMap.FindAction("Reload Weapon", throwIfNotFound: true);
+        // UI Map
+        m_UIMap = asset.FindActionMap("UI Map", throwIfNotFound: true);
+        m_UIMap_OpenInventory = m_UIMap.FindAction("Open Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -217,72 +238,31 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Movement Map
-    private readonly InputActionMap m_MovementMap;
-    private List<IMovementMapActions> m_MovementMapActionsCallbackInterfaces = new List<IMovementMapActions>();
-    private readonly InputAction m_MovementMap_MovementAction;
-    public struct MovementMapActions
+    // Player Map
+    private readonly InputActionMap m_PlayerMap;
+    private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
+    private readonly InputAction m_PlayerMap_MovementAction;
+    private readonly InputAction m_PlayerMap_ItemUse;
+    private readonly InputAction m_PlayerMap_ReloadWeapon;
+    public struct PlayerMapActions
     {
         private @PlayerInputActions m_Wrapper;
-        public MovementMapActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MovementAction => m_Wrapper.m_MovementMap_MovementAction;
-        public InputActionMap Get() { return m_Wrapper.m_MovementMap; }
+        public PlayerMapActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MovementAction => m_Wrapper.m_PlayerMap_MovementAction;
+        public InputAction @ItemUse => m_Wrapper.m_PlayerMap_ItemUse;
+        public InputAction @ReloadWeapon => m_Wrapper.m_PlayerMap_ReloadWeapon;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MovementMapActions set) { return set.Get(); }
-        public void AddCallbacks(IMovementMapActions instance)
+        public static implicit operator InputActionMap(PlayerMapActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerMapActions instance)
         {
-            if (instance == null || m_Wrapper.m_MovementMapActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_MovementMapActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Add(instance);
             @MovementAction.started += instance.OnMovementAction;
             @MovementAction.performed += instance.OnMovementAction;
             @MovementAction.canceled += instance.OnMovementAction;
-        }
-
-        private void UnregisterCallbacks(IMovementMapActions instance)
-        {
-            @MovementAction.started -= instance.OnMovementAction;
-            @MovementAction.performed -= instance.OnMovementAction;
-            @MovementAction.canceled -= instance.OnMovementAction;
-        }
-
-        public void RemoveCallbacks(IMovementMapActions instance)
-        {
-            if (m_Wrapper.m_MovementMapActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IMovementMapActions instance)
-        {
-            foreach (var item in m_Wrapper.m_MovementMapActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_MovementMapActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public MovementMapActions @MovementMap => new MovementMapActions(this);
-
-    // Item Map
-    private readonly InputActionMap m_ItemMap;
-    private List<IItemMapActions> m_ItemMapActionsCallbackInterfaces = new List<IItemMapActions>();
-    private readonly InputAction m_ItemMap_ItemUse;
-    private readonly InputAction m_ItemMap_ReloadWeapon;
-    public struct ItemMapActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public ItemMapActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ItemUse => m_Wrapper.m_ItemMap_ItemUse;
-        public InputAction @ReloadWeapon => m_Wrapper.m_ItemMap_ReloadWeapon;
-        public InputActionMap Get() { return m_Wrapper.m_ItemMap; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ItemMapActions set) { return set.Get(); }
-        public void AddCallbacks(IItemMapActions instance)
-        {
-            if (instance == null || m_Wrapper.m_ItemMapActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_ItemMapActionsCallbackInterfaces.Add(instance);
             @ItemUse.started += instance.OnItemUse;
             @ItemUse.performed += instance.OnItemUse;
             @ItemUse.canceled += instance.OnItemUse;
@@ -291,8 +271,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ReloadWeapon.canceled += instance.OnReloadWeapon;
         }
 
-        private void UnregisterCallbacks(IItemMapActions instance)
+        private void UnregisterCallbacks(IPlayerMapActions instance)
         {
+            @MovementAction.started -= instance.OnMovementAction;
+            @MovementAction.performed -= instance.OnMovementAction;
+            @MovementAction.canceled -= instance.OnMovementAction;
             @ItemUse.started -= instance.OnItemUse;
             @ItemUse.performed -= instance.OnItemUse;
             @ItemUse.canceled -= instance.OnItemUse;
@@ -301,21 +284,67 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ReloadWeapon.canceled -= instance.OnReloadWeapon;
         }
 
-        public void RemoveCallbacks(IItemMapActions instance)
+        public void RemoveCallbacks(IPlayerMapActions instance)
         {
-            if (m_Wrapper.m_ItemMapActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IItemMapActions instance)
+        public void SetCallbacks(IPlayerMapActions instance)
         {
-            foreach (var item in m_Wrapper.m_ItemMapActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerMapActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_ItemMapActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public ItemMapActions @ItemMap => new ItemMapActions(this);
+    public PlayerMapActions @PlayerMap => new PlayerMapActions(this);
+
+    // UI Map
+    private readonly InputActionMap m_UIMap;
+    private List<IUIMapActions> m_UIMapActionsCallbackInterfaces = new List<IUIMapActions>();
+    private readonly InputAction m_UIMap_OpenInventory;
+    public struct UIMapActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public UIMapActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @OpenInventory => m_Wrapper.m_UIMap_OpenInventory;
+        public InputActionMap Get() { return m_Wrapper.m_UIMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIMapActions set) { return set.Get(); }
+        public void AddCallbacks(IUIMapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIMapActionsCallbackInterfaces.Add(instance);
+            @OpenInventory.started += instance.OnOpenInventory;
+            @OpenInventory.performed += instance.OnOpenInventory;
+            @OpenInventory.canceled += instance.OnOpenInventory;
+        }
+
+        private void UnregisterCallbacks(IUIMapActions instance)
+        {
+            @OpenInventory.started -= instance.OnOpenInventory;
+            @OpenInventory.performed -= instance.OnOpenInventory;
+            @OpenInventory.canceled -= instance.OnOpenInventory;
+        }
+
+        public void RemoveCallbacks(IUIMapActions instance)
+        {
+            if (m_Wrapper.m_UIMapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIMapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIMapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIMapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIMapActions @UIMap => new UIMapActions(this);
     private int m_PlayerSchemeSchemeIndex = -1;
     public InputControlScheme PlayerSchemeScheme
     {
@@ -325,13 +354,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_PlayerSchemeSchemeIndex];
         }
     }
-    public interface IMovementMapActions
+    public interface IPlayerMapActions
     {
         void OnMovementAction(InputAction.CallbackContext context);
-    }
-    public interface IItemMapActions
-    {
         void OnItemUse(InputAction.CallbackContext context);
         void OnReloadWeapon(InputAction.CallbackContext context);
+    }
+    public interface IUIMapActions
+    {
+        void OnOpenInventory(InputAction.CallbackContext context);
     }
 }
