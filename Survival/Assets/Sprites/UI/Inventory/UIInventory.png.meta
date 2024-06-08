@@ -1,43 +1,10 @@
 fileFormatVersion: 2
-guid: 0aab1fa75c0e5b843a7c365d3f7229be
+guid: c78ffa449d8b5f448994ac476d6d015f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7455058357585515688
-    second: Items_1_0
-  - first:
-      213: 4292531093066514535
-    second: Items_1_1
-  - first:
-      213: 1777419697579625635
-    second: Items_1_2
-  - first:
-      213: -3069033634951228400
-    second: Items_1_3
-  - first:
-      213: -2585042310909185913
-    second: Items_1_4
-  - first:
-      213: -2894241272156299307
-    second: Items_1_5
-  - first:
-      213: -2047619670962445711
-    second: Items_1_6
-  - first:
-      213: -5598286171239873919
-    second: Items_1_7
-  - first:
-      213: 6153079266434214394
-    second: Items_1_8
-  - first:
-      213: 623606996824345768
-    second: Items_1_9
-  - first:
-      213: 680999100137453412
-    second: Items_1_10
-  - first:
-      213: -2651580692282312214
-    second: Items_1_11
+      213: -6305188915240213195
+    second: UIInventory_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -79,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 5, y: 5, z: 5, w: 5}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -133,91 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Items_1_Heart
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a411bfd310b57760800000000000000
-      internalID: 7455058357585515688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1_Carrot
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7608c8d4942229b30800000000000000
-      internalID: 4292531093066514535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1_Cherry
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ac040b3cc9aaa810800000000000000
-      internalID: 1777419697579625635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1_Lemon
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01491016b2a9865d0800000000000000
-      internalID: -3069033634951228400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1_WaterBottle
+      name: UIInventory_0
       rect:
         serializedVersion: 2
         x: 0
@@ -225,20 +108,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78037e0e6b5102cd0800000000000000
-      internalID: -2585042310909185913
+      spriteID: 535606186187f78a0800000000000000
+      internalID: -6305188915240213195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1_CannedFood
+      name: UIInventory_1
       rect:
         serializedVersion: 2
         x: 16
@@ -246,20 +129,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5df59d6b5e695d7d0800000000000000
-      internalID: -2894241272156299307
+      spriteID: d5accc22d189f8949a4ce41e3d1a2587
+      internalID: -1053558006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1_SodaCan
+      name: UIInventory_2
       rect:
         serializedVersion: 2
         x: 32
@@ -267,41 +150,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1726e2d02c46593e0800000000000000
-      internalID: -2047619670962445711
+      spriteID: f22ed06b7a8e93340ba64db0a41a431b
+      internalID: 406961598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1_WoodenLog
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 18204446364ee42b0800000000000000
-      internalID: -5598286171239873919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1_EnergyBooster
+      name: UIInventory_3
       rect:
         serializedVersion: 2
         x: 0
@@ -309,20 +171,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: af9e1ae0ef0246550800000000000000
-      internalID: 6153079266434214394
+      spriteID: 0f42ea98291a2e14f88a1c69389c0aaf
+      internalID: -2119468750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1_Wrench
+      name: UIInventory_4
       rect:
         serializedVersion: 2
         x: 16
@@ -330,20 +192,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8acc925724f77a800800000000000000
-      internalID: 623606996824345768
+      spriteID: f84f2ed373bc5454cac20e61e91ebb2e
+      internalID: -1438406730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1_Hammer
+      name: UIInventory_5
       rect:
         serializedVersion: 2
         x: 32
@@ -351,14 +213,77 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 467bd00d215637900800000000000000
-      internalID: 680999100137453412
+      spriteID: c5ff9a5ebf2aa1c4e913f070f1f97927
+      internalID: 68132462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInventory_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951b25360af10ac459e879fe330908e3
+      internalID: 1745291479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInventory_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33311ab91c0a32b42999305e8b2e2c3e
+      internalID: -1566296220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIInventory_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8ccdefd358bf14f8b76eee3360743e
+      internalID: -145155089
       vertices: []
       indices: 
       edges: []
@@ -366,25 +291,23 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d585dd6a550706a449e68434e9934ae3
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Items_1_CannedFood: -2894241272156299307
-      Items_1_Carrot: 4292531093066514535
-      Items_1_Cherry: 1777419697579625635
-      Items_1_EnergyBooster: 6153079266434214394
-      Items_1_Hammer: 680999100137453412
-      Items_1_Heart: 7455058357585515688
-      Items_1_Lemon: -3069033634951228400
-      Items_1_SodaCan: -2047619670962445711
-      Items_1_WaterBottle: -2585042310909185913
-      Items_1_WoodenLog: -5598286171239873919
-      Items_1_Wrench: 623606996824345768
+      UIInventory_0: -6305188915240213195
+      UIInventory_1: -1053558006
+      UIInventory_2: 406961598
+      UIInventory_3: -2119468750
+      UIInventory_4: -1438406730
+      UIInventory_5: 68132462
+      UIInventory_6: 1745291479
+      UIInventory_7: -1566296220
+      UIInventory_8: -145155089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

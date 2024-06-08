@@ -11,4 +11,7 @@ public class ItemScriptableObject : ScriptableObject
     public string itemDescription;      // Item description, including item usage
     public Sprite itemImage;
 
+    [Header("UI")] 
+    public bool itemIsStackable;
+    public int maximumInOneStack;
 }
