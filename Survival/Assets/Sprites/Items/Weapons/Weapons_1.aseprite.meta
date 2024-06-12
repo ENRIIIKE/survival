@@ -123,14 +123,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Weapons_1
     originalName: 
-    pivot: {x: 0.75, y: -1.0238096}
+    pivot: {x: 1.5925926, y: -3.2857144}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 56
+      width: 54
       height: 42
     spriteID: 0a2d6e8fef7138b4fb12d0a564cf81a3
     spriteBone: []
@@ -153,9 +153,9 @@ ScriptedImporter:
     - name: Weapons_1
       frameIndex: 0
       cellRect:
-        x: 6
-        y: 43
-        width: 56
+        x: 10
+        y: 138
+        width: 54
         height: 42
       spriteId: 0a2d6e8fef7138b4fb12d0a564cf81a3
     linkedCells: []
@@ -164,4 +164,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 96}
+  canvasSize: {x: 192, y: 192}

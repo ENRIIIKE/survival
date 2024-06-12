@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapons_1_0
+      name: Weapons_1_Pistol
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -121,32 +121,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapons_1_1
+      name: Weapons_1_AR15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 32
+        y: 160
         width: 32
         height: 32
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11a20c9e23f3347498ac30f3f3d1cd5d
-      internalID: -918138467
+      spriteID: 47f236e246823be4eabb2be0adbccb72
+      internalID: 1174763916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapons_1_AR15
+      name: Weapons_1_Pistol_Hold
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 0
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -156,8 +156,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17acd0dc4d66a374ab88fe370ab5363e
-      internalID: 824935683
+      spriteID: ec9b633308bf55945964e618bb347ffc
+      internalID: -1944008236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_1_AR15_Hold
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57dd0b26d1839f94c8703274f545299e
+      internalID: -918138467
       vertices: []
       indices: 
       edges: []
@@ -173,9 +194,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapons_1_0: 1344467728533578282
-      Weapons_1_1: -918138467
-      Weapons_1_AR15: 824935683
+      Weapons_1_AR15: 1174763916
+      Weapons_1_AR15_Hold: -918138467
+      Weapons_1_Pistol: 1344467728533578282
+      Weapons_1_Pistol_Hold: -1944008236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,7 +12,11 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
     public GameObject inventoryUI;
 
+    [SerializeField]
     private int selectedSlot = -1;
+
+    [Header("Equip")]
+    public InventorySlot[] equipSlots;
     private void Start()
     {
         ChangeSelectedSlot(0);
@@ -25,6 +29,18 @@ public class InventoryManager : MonoBehaviour
         }
         inventorySlots[newValue].Select();
         selectedSlot = newValue;
+
+        PlayerActionsScript actionScript = GetComponent<PlayerActionsScript>();
+
+        if (equipSlots[newValue].transform.childCount == 1)
+        {
+            actionScript.activeItem = equipSlots[newValue].GetComponentInChildren<InventoryItem>().itemSo;
+            actionScript.RefreshActionValues();
+        }
+        else
+        {
+            actionScript.activeItem = null;
+        }
     }
 
     private void Awake()

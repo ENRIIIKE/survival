@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84efea7898418c84cbffb48f9d13bee9, type: 3}
-  m_Name: AR15
+  m_Name: Pistol
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemName: AR-15
-  itemDescription: Pew pew automatic weapon
-  itemImage: {fileID: 1174763916, guid: 393bb48b53803c74ba5cc852566d5cd0, type: 3}
+  itemID: 8
+  itemName: Pistol
+  itemDescription: small pew pew gun
+  itemImage: {fileID: 1344467728533578282, guid: 393bb48b53803c74ba5cc852566d5cd0, type: 3}
   itemIsStackable: 0
   maximumInOneStack: 0
-  singleFire: 0
+  singleFire: 1
   burstFire: 0
-  automaticFire: 1
-  weaponDamage: 15
-  weaponAttackSpeed: 0.3
-  magCapacity: 30
+  automaticFire: 0
+  weaponDamage: 5
+  weaponAttackSpeed: 0.8
+  magCapacity: 7
   magCurrently: 0
-  reloadTime: 3.9
+  reloadTime: 2
   bulletPrefab: {fileID: 0}
-  holdingSprite: {fileID: -918138467, guid: 393bb48b53803c74ba5cc852566d5cd0, type: 3}
+  holdingSprite: {fileID: -1944008236, guid: 393bb48b53803c74ba5cc852566d5cd0, type: 3}
